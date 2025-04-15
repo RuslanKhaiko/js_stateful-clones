@@ -15,7 +15,7 @@ function transformStateWithClones(state, actions) {
       case 'addProperties':
         Object.assign(newState, action.extraData);
 
-        result.push({ ...newState });
+        // result.push({ ...newState });
         break;
 
       case 'removeProperties':
@@ -25,7 +25,7 @@ function transformStateWithClones(state, actions) {
           }
         }
 
-        result.push({ ...newState });
+        // result.push({ ...newState });
         break;
 
       case 'clear':
@@ -35,13 +35,12 @@ function transformStateWithClones(state, actions) {
           }
         }
 
-        result.push({ ...newState });
-
         break;
 
       default:
-        break;
+      // break;
     }
+    result.push({ ...newState });
   }
 
   return result;
